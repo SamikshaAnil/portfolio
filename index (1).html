@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samiksha Wagrekar | .NET Software Developer | C#, ASP.NET Core, Microservices, React</title>
+<meta name="description" content="Portfolio of Samiksha Wagrekar, a .NET Software Developer in Bengaluru specializing in C#, ASP.NET Core Web API, .NET 8 Microservices, React, and SQL.">
+<meta name="keywords" content="Samiksha Wagrekar, .NET Developer, C# Developer, ASP.NET Core, Web API, Microservices, Entity Framework Core, React, SQL Server, Bengaluru">
+<meta name="author" content="Samiksha Wagrekar">
+
+<!-- OpenGraph / Social Cards -->
+<meta property="og:title" content="Samiksha Wagrekar | .NET Software Developer">
+<meta property="og:description" content="Enterprise .NET 8 Microservices, C#, ASP.NET Core Web API, React, and SQL Developer based in Bengaluru.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samikshawagrekar.github.io/">
+<meta name="theme-color" content="#4f46e5">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%234f46e5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='66' font-size='52' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui, -apple-system, sans-serif'%3ESW%3C/text%3E%3C/svg%3E">
+
+<!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Samiksha Wagrekar",
+  "jobTitle": "Software Developer (.NET)",
+  "worksFor": { "@type": "Organization", "name": "Mindteck (India) Limited" },
+  "email": "mailto:samikshawagrekar2206@gmail.com",
+  "telephone": "+918277558987",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
+  "sameAs": ["https://www.linkedin.com/in/samiksha-wagrekar-689a72211"],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "St. Agnes College (Autonomous), Mangalore" },
+  "knowsAbout": ["C#", ".NET 8", "ASP.NET Core", "REST APIs", "Entity Framework Core", "Microservices", "SQL Server", "MySQL", "React", "Azure Blob Storage"]
+}
+</script>
+
+<style>
+/* ==========================================================================
+   CSS Custom Properties & Design Tokens
+   ========================================================================== */
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Smooth Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Theme (Default) */
+[data-theme="dark"] {
+  --bg-canvas: #090d16;
+  --bg-surface: #101726;
+  --bg-surface-elevated: #162033;
+  --bg-card: rgba(16, 23, 38, 0.85);
+  --bg-card-hover: rgba(26, 36, 56, 0.95);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(99, 102, 241, 0.4);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-invert: #090d16;
+
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --primary-glow: rgba(99, 102, 241, 0.25);
+
+  --accent-cyan: #06b6d4;
+  --accent-emerald: #10b981;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.3);
+
+  --badge-bg: rgba(99, 102, 241, 0.15);
+  --badge-text: #a5b4fc;
+  --badge-border: rgba(99, 102, 241, 0.3);
+
+  --header-bg: rgba(9, 13, 22, 0.85);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --card-shadow-hover: 0 20px 40px -15px rgba(99, 102, 241, 0.25), 0 0 1px 1px rgba(99, 102, 241, 0.35);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-accent: rgba(79, 70, 229, 0.3);
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-faint: #94a3b8;
+  --text-invert: #ffffff;
+
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --primary-glow: rgba(79, 70, 229, 0.15);
+
+  --accent-cyan: #0891b2;
+  --accent-emerald: #059669;
+  --accent-emerald-glow: rgba(5, 150, 105, 0.2);
+
+  --badge-bg: #eef2ff;
+  --badge-text: #4338ca;
+  --badge-border: #c7d2fe;
+
+  --header-bg: rgba(248, 250, 252, 0.88);
+  --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 0 1px rgba(15, 23, 42, 0.08);
+  --card-shadow-hover: 0 15px 35px -5px rgba(79, 70, 229, 0.15), 0 0 1px rgba(79, 70, 229, 0.3);
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Background Subtle Radial Glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 600px;
+  background: radial-gradient(circle 600px at 50% -100px, var(--primary-glow), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: var(--primary-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+img, svg {
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Skip link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  z-index: 100;
+  transition: top var(--transition-fast);
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: border-color var(--transition-normal), background-color var(--transition-normal);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.25rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+  color: white;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.35rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-main);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  padding: 4.5rem 0 3.5rem;
+  position: relative;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.status-dot {
+  width: 0.5625rem;
+  height: 0.5625rem;
+  background-color: var(--accent-emerald);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px var(--accent-emerald-glow);
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-emerald);
+  animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-lead {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 44rem;
+  margin-bottom: 2rem;
+}
+
+.hero-lead strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Hero CTA Buttons */
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--primary-glow);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted) !important;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  color: var(--text-main) !important;
+  border-color: var(--border-strong);
+  background: var(--bg-surface);
+  transform: translateY(-2px);
+}
+
+/* Quick Details Pill Bar */
+.quick-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.quick-info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quick-info-item strong {
+  color: var(--text-main);
+}
+
+.copy-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-surface-elevated);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 0.8125rem;
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.copy-pill-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* ==========================================================================
+   Metrics & Impact Banner
+   ========================================================================== */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 3.5rem 0 1.5rem;
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.35rem 1.25rem;
+  text-align: left;
+  transition: all var(--transition-fast);
+  box-shadow: var(--card-shadow);
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.metric-number {
+  font-family: var(--font-mono);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.metric-desc {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Sections Common Styling
+   ========================================================================== */
+section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-header {
+  margin-bottom: 2.75rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-light);
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 38rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 1.025rem;
+  line-height: 1.75;
+}
+
+.about-text p strong {
+  color: var(--text-main);
+}
+
+.highlights-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+.highlights-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.feature-icon-box {
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 8px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.feature-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.feature-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Technical Skills Section
+   ========================================================================== */
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-category-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all var(--transition-fast);
+  box-shadow: var(--card-shadow);
+}
+
+.skill-category-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.skill-cat-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+}
+
+.skill-cat-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-pill {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: var(--bg-surface-elevated);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.skill-pill:hover {
+  border-color: var(--primary);
+  background: var(--badge-bg);
+  color: var(--primary-light);
+}
+
+.skill-pill.highlight {
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border-color: var(--badge-border);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Experience Section
+   ========================================================================== */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary), var(--accent-cyan));
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.exp-role {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.exp-company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.exp-badge-duration {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.exp-summary {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.exp-bullets li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.exp-bullets li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-light);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.exp-bullets li strong {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Featured Projects Section
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2.25rem;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.project-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.project-card.flagship {
+  border: 1px solid var(--border-accent);
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.04) 100%);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.project-flag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.project-desc strong {
+  color: var(--text-main);
+}
+
+.project-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.point-icon {
+  color: var(--primary-light);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.project-point strong {
+  color: var(--text-main);
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.project-tag {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.secondary-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Education & Certifications Section
+   ========================================================================== */
+.edu-cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.edu-cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.85rem;
+  box-shadow: var(--card-shadow);
+}
+
+.edu-cert-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.edu-cert-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--border-strong);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0.25rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.item-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.item-institution {
+  font-size: 0.875rem;
+  color: var(--primary-light);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.item-meta {
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+.cert-badge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cert-card-sub {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+}
+
+.cert-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.cert-issuer {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.learning-box {
+  margin-top: 1.75rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: var(--badge-bg);
+  border: 1px dashed var(--badge-border);
+}
+
+.learning-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--badge-text);
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ==========================================================================
+   Recruiter Contact Section
+   ========================================================================== */
+.contact-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.contact-intro h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.contact-intro p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.contact-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.contact-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.contact-tile:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+  background: var(--bg-surface-elevated);
+}
+
+.contact-tile-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.tile-icon-box {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 10px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  flex-shrink: 0;
+}
+
+.tile-label {
+  font-size: 0.775rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tile-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.tile-arrow {
+  color: var(--text-faint);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.contact-tile:hover .tile-arrow {
+  color: var(--primary-light);
+  transform: translateX(3px);
+}
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all var(--transition-normal);
+}
+
+.toast-notice.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer.site-footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-canvas);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-back-top:hover {
+  color: var(--primary-light);
+}
+
+/* ==========================================================================
+   Print Stylesheet (Optimized for 2-page Recruiter Resume)
+   ========================================================================== */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10pt !important;
+  }
+  header.site-header, .theme-toggle-btn, .cta-group, .toast-notice, .footer-back-top, .status-badge {
+    display: none !important;
+  }
+  section {
+    padding: 1.2rem 0 !important;
+    border-top: 1px solid #e5e7eb !important;
+  }
+  .hero-section {
+    padding: 1rem 0 !important;
+  }
+  .project-card, .metric-card, .highlights-card, .contact-container, .edu-cert-card {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    background: #ffffff !important;
+    break-inside: avoid;
+  }
+  .gradient-text {
+    color: #1e1b4b !important;
+    -webkit-text-fill-color: #1e1b4b !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 900px) {
+  .about-grid, .contact-content, .edu-cert-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 4.25rem;
+    left: 0;
+    width: 100%;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .contact-container {
+    padding: 2rem 1.5rem;
+  }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- Toast notification element -->
+<div id="toast" class="toast-notice" role="status" aria-live="polite">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-emerald)"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span id="toast-text">Copied to clipboard!</span>
+</div>
+
+<!-- Sticky Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#top" class="brand-logo" aria-label="Samiksha Wagrekar - Home">
+        <div class="brand-badge">SW</div>
+        <span>Samiksha Wagrekar</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="12" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="Samiksha_Wagrekar_Resume.pdf" download class="btn btn-primary" style="padding: 0.55rem 1rem; font-size: 0.85rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Resume
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero-section" id="top">
+    <div class="container">
+      <!-- Status Badge -->
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Open to .NET Developer Opportunities &bull; Bengaluru / Remote</span>
+      </div>
+
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Samiksha Wagrekar</span>
+      </h1>
+      <p class="hero-subtitle">Software Developer (.NET) &bull; Microservices &bull; C# &bull; ASP.NET Core &bull; React &bull; SQL</p>
+
+      <p class="hero-lead">
+        I engineer and modernize enterprise applications. Currently migrating enterprise legacy systems to high-performance <strong>.NET 8 microservices and React</strong> at <strong>Mindteck</strong>, focusing on clean architecture, resilient REST APIs, and database performance.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="cta-group">
+        <a class="btn btn-primary" href="Samiksha_Wagrekar_Resume.pdf" download id="resume-download-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Resume (PDF)
+        </a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/samiksha-wagrekar-689a72211" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+          LinkedIn Profile
+        </a>
+        <a class="btn btn-outline" href="#contact">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Quick Info Bar -->
+      <div class="quick-info-bar">
+        <div class="quick-info-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-light)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Location: <strong>Bengaluru, India</strong></span>
+        </div>
+        <div class="quick-info-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-light)"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          <span>Email: <a href="mailto:samikshawagrekar2206@gmail.com">samikshawagrekar2206@gmail.com</a></span>
+          <button class="copy-pill-btn" onclick="copyText('samikshawagrekar2206@gmail.com', 'Email copied!')" title="Copy Email">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+        <div class="quick-info-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-light)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Phone: <a href="tel:+918277558987">+91 8277558987</a></span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number">14+</div>
+          <div class="metric-label">Microservices Built</div>
+          <div class="metric-desc">Migrated behind unified API Gateway</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">15+</div>
+          <div class="metric-label">Enterprise Reports</div>
+          <div class="metric-desc">Headcount, Finance &amp; Allocation modules</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">100%</div>
+          <div class="metric-label">Root Cause Defect Fixes</div>
+          <div class="metric-desc">Zero-regression UAT &amp; Production delivery</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">.NET 8</div>
+          <div class="metric-label">Modern Stack Focus</div>
+          <div class="metric-desc">C#, Clean Architecture, React &amp; SQL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Engineering Reliable Enterprise Software</h2>
+        <p class="section-desc">Focused on backend architecture, resilient data pipelines, and seamless user experiences.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a <strong>Software Developer (.NET)</strong> with practical experience building, testing, and modernizing enterprise applications. At <strong>Mindteck (India) Limited</strong>, I play a key role in decommissioning a legacy ASP.NET WebForms monolith and architecting <strong>14 microservices in .NET 8</strong> connected with a modern React frontend.
+          </p>
+          <p>
+            My engineering foundation is built on <strong>C#, ASP.NET Core Web API, Entity Framework Core, SQL optimization, and Clean Architecture</strong>. I take pride in root-cause debugging—whether it is resolving complex race conditions, optimizing long-running stored procedures, or untangling XML/SOAP legacy integrations.
+          </p>
+          <p>
+            I am actively seeking <strong>.NET Software Developer roles</strong> where I can contribute to mission-critical backend systems, collaborate with high-performance teams, and continue driving technical excellence.
+          </p>
+        </div>
+
+        <!-- What I Bring to the Table -->
+        <div class="highlights-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-light)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            What I Bring To Your Team
+          </h3>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-icon-box">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div>
+                <div class="feature-title">Enterprise System Modernization</div>
+                <div class="feature-desc">Proven hands-on experience refactoring legacy ASP.NET WebForms codebases to modern .NET 8 microservice endpoints.</div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-icon-box">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <div>
+                <div class="feature-title">Clean Architecture &amp; SOLID</div>
+                <div class="feature-desc">Separation of concerns using Repository Pattern, Dependency Injection, and DTO mapping for maintainable testable code.</div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-icon-box">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <div class="feature-title">Security &amp; Best Practices</div>
+                <div class="feature-desc">Implemented JWT authentication, RBAC authorization, and mitigation of path-traversal vulnerabilities.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Technical Skills Matrix</h2>
+        <p class="section-desc">Technologies and patterns I apply daily to engineer robust backend systems.</p>
+      </div>
+
+      <div class="skills-matrix">
+        <!-- Backend & Frameworks -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div class="skill-cat-title">Backend &amp; Languages</div>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-pill highlight">C#</span>
+            <span class="skill-pill highlight">.NET 8</span>
+            <span class="skill-pill highlight">ASP.NET Core Web API</span>
+            <span class="skill-pill">Entity Framework Core</span>
+            <span class="skill-pill">LINQ</span>
+            <span class="skill-pill">ASP.NET WebForms (.NET 4.8)</span>
+            <span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Architecture & Patterns -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </div>
+            <div class="skill-cat-title">Architecture &amp; Design</div>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-pill highlight">Microservices</span>
+            <span class="skill-pill highlight">API Gateway</span>
+            <span class="skill-pill highlight">Clean Architecture</span>
+            <span class="skill-pill">Repository Pattern</span>
+            <span class="skill-pill">Dependency Injection</span>
+            <span class="skill-pill">SOLID Principles</span>
+            <span class="skill-pill">JWT &amp; RBAC</span>
+          </div>
+        </div>
+
+        <!-- Databases & Cloud -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+            </div>
+            <div class="skill-cat-title">Database &amp; Cloud</div>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-pill highlight">SQL Server</span>
+            <span class="skill-pill highlight">MySQL</span>
+            <span class="skill-pill highlight">Azure Blob Storage</span>
+            <span class="skill-pill">Stored Procedures</span>
+            <span class="skill-pill">Query Optimization</span>
+            <span class="skill-pill">Database Indexing</span>
+          </div>
+        </div>
+
+        <!-- Frontend Development -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div class="skill-cat-title">Frontend Integration</div>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-pill highlight">React</span>
+            <span class="skill-pill highlight">Vite</span>
+            <span class="skill-pill">React Query</span>
+            <span class="skill-pill">HTML5 &amp; CSS3</span>
+            <span class="skill-pill">Responsive UI Design</span>
+          </div>
+        </div>
+
+        <!-- Testing & Quality -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div class="skill-cat-title">Testing &amp; Quality</div>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-pill highlight">xUnit</span>
+            <span class="skill-pill highlight">Moq</span>
+            <span class="skill-pill">Vitest</span>
+            <span class="skill-pill">Postman</span>
+            <span class="skill-pill">Bruno</span>
+            <span class="skill-pill">Unit &amp; Integration Testing</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <div class="skill-cat-title">DevOps &amp; Tooling</div>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-pill highlight">Git</span>
+            <span class="skill-pill highlight">GitLab CI/CD</span>
+            <span class="skill-pill">Nginx</span>
+            <span class="skill-pill">IIS</span>
+            <span class="skill-pill">Swagger / OpenAPI</span>
+            <span class="skill-pill">Jira &amp; Agile</span>
+            <span class="skill-pill">Claude Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career History</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-desc">Hands-on enterprise software development and system modernization.</p>
+      </div>
+
+      <div class="experience-timeline">
+        <article class="experience-card">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role">Associate Software Engineer</h3>
+              <div class="exp-company">
+                <span>Mindteck (India) Limited</span>
+                <span>&bull;</span>
+                <span style="color:var(--text-muted); font-size: 0.9rem;">Bengaluru, India</span>
+              </div>
+            </div>
+            <span class="exp-badge-duration">August 2024 &ndash; Present</span>
+          </div>
+
+          <p class="exp-summary">
+            Leading engineering contributions across the migration of the flagship <strong>Time Sheet Management System (TMS)</strong> and three internal products, working on high-volume backend APIs, modern React interfaces, database design, and CI/CD pipelines.
+          </p>
+
+          <ul class="exp-bullets">
+            <li>
+              <strong>Modernized Enterprise Core:</strong> Migrated legacy ASP.NET WebForms (.NET Framework 4.8) to <strong>.NET 8 microservices and React</strong>, breaking a complex monolith into <strong>14 independent service APIs</strong> behind an API Gateway.
+            </li>
+            <li>
+              <strong>Architecture &amp; Code Quality:</strong> Applied Clean Architecture, Dependency Injection, and the Repository Pattern, ensuring clear separation of concerns, testability, and adherence to SOLID design principles.
+            </li>
+            <li>
+              <strong>Defect Resolution &amp; CI/CD:</strong> Resolved high-priority UAT and production defects at root cause; maintained and stabilized GitLab CI/CD build and test pipelines following multi-developer merges.
+            </li>
+            <li>
+              <strong>Linux &amp; Reverse Proxy Deployment:</strong> Configured and deployed .NET services on Linux operating environments behind <strong>Nginx</strong> reverse proxy with SSL termination.
+            </li>
+          </ul>
+
+          <div class="project-tech-tags">
+            <span class="project-tag">.NET 8</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">ASP.NET Core Web API</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Entity Framework Core</span>
+            <span class="project-tag">MySQL / SQL Server</span>
+            <span class="project-tag">Azure Blob Storage</span>
+            <span class="project-tag">GitLab CI/CD</span>
+            <span class="project-tag">Nginx</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Case Studies</span>
+        <h2 class="section-title">Key Projects &amp; Contributions</h2>
+        <p class="section-desc">Practical systems engineered for enterprise scale, data integrity, and high performance.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Flagship Project: TMS Migration -->
+        <article class="project-card flagship">
+          <div class="project-top">
+            <h3 class="project-title">Enterprise TMS Migration (.NET 8 &amp; React)</h3>
+            <span class="project-flag">Flagship Modernization</span>
+          </div>
+
+          <p class="project-desc">
+            End-to-end module-by-module migration of Mindteck's enterprise Time Sheet Management System to <strong>.NET 8 and React</strong> with 100% feature parity, deployed as 14 microservice APIs orchestrated behind an API Gateway.
+          </p>
+
+          <div class="project-details-grid">
+            <div class="project-point">
+              <span class="point-icon">&#10003;</span>
+              <div><strong>Core Module Ownership:</strong> Built the entire Timesheet entry and approval workflow from controller and domain business logic through repository layers down to the React UI.</div>
+            </div>
+            <div class="project-point">
+              <span class="point-icon">&#10003;</span>
+              <div><strong>Enterprise Reporting Engine:</strong> Re-engineered ~15 complex reports (Head Count, Jobs, Allocation, Purchase, Finance) with automated Excel and PDF export pipelines using <code>ClosedXML</code> and <code>QuestPDF</code>.</div>
+            </div>
+            <div class="project-point">
+              <span class="point-icon">&#10003;</span>
+              <div><strong>Cloud Blob Storage Migration:</strong> Migrated legacy database SQL BLOB storage to <strong>Azure Blob Storage</strong> using the <code>Azure.Storage.Blobs</code> SDK, freeing database capacity and speeding file reads.</div>
+            </div>
+            <div class="project-point">
+              <span class="point-icon">&#10003;</span>
+              <div><strong>Legacy &amp; SOAP Integrations:</strong> Constructed dynamic XML payloads with <code>LINQ to XML</code> for stored procedure inputs and SOAP communications with external IPMS.</div>
+            </div>
+            <div class="project-point">
+              <span class="point-icon">&#10003;</span>
+              <div><strong>Rigorous Test Automation:</strong> Authored extensive test suites using <code>xUnit</code>, <code>Moq</code>, and <code>Vitest</code>; fixed complex date-boundary calculations and edge cases.</div>
+            </div>
+          </div>
+
+          <div class="project-tech-tags">
+            <span class="project-tag">.NET 8</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">ASP.NET Core Web API</span>
+            <span class="project-tag">EF Core</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Azure Blob Storage</span>
+            <span class="project-tag">ClosedXML</span>
+            <span class="project-tag">QuestPDF</span>
+            <span class="project-tag">xUnit / Moq</span>
+          </div>
+        </article>
+
+        <!-- Secondary Projects Grid -->
+        <div class="secondary-projects">
+          <!-- Skill Matrix -->
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title" style="font-size:1.25rem;">Skill Matrix Management System</h3>
+            </div>
+            <p class="project-desc">
+              Centralized platform for tracking organization-wide technical competencies, reviews, and resource allocations.
+            </p>
+            <div class="project-details-grid">
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Built employee profiles with multi-tier manager approval flows, rejection tracking, and admin unfreeze windows.</div>
+              </div>
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Designed bench analytics dashboard, team competency reporting, and bulk Excel data ingestion using <code>EPPlus</code>.</div>
+              </div>
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Enforced JWT encrypted token authentication, rate limiting, and defensive security headers.</div>
+              </div>
+            </div>
+            <div class="project-tech-tags">
+              <span class="project-tag">ASP.NET Core Web API</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">JWT</span>
+              <span class="project-tag">EPPlus</span>
+            </div>
+          </article>
+
+          <!-- Document Archives -->
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title" style="font-size:1.25rem;">Enterprise Document Archives</h3>
+            </div>
+            <p class="project-desc">
+              Secure digital repository for enterprise documents featuring granular permissioning and manipulation tools.
+            </p>
+            <div class="project-details-grid">
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Engineered folder-based file uploads, audit notes, version history, ZIP archiving, and dynamic PDF merge/rotate.</div>
+              </div>
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Secured file delivery via strict RBAC, MIME validation, and sanitization to eliminate path-traversal exploits.</div>
+              </div>
+            </div>
+            <div class="project-tech-tags">
+              <span class="project-tag">ASP.NET Core</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Security &amp; RBAC</span>
+              <span class="project-tag">PDF Processing</span>
+            </div>
+          </article>
+
+          <!-- Legacy TMS -->
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title" style="font-size:1.25rem;">Legacy TMS Maintenance &amp; Integrations</h3>
+            </div>
+            <p class="project-desc">
+              Production support, feature enhancements, and database query optimization for enterprise WebForms application.
+            </p>
+            <div class="project-details-grid">
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Delivered Travel Requisition, Expense Management, Credit/Debit Note, and PF Consent modules.</div>
+              </div>
+              <div class="project-point">
+                <span class="point-icon">&#10003;</span>
+                <div>Integrated General Ledger (GL) Accounts APIs and optimized complex stored procedures for financial audit runs.</div>
+              </div>
+            </div>
+            <div class="project-tech-tags">
+              <span class="project-tag">ASP.NET WebForms</span>
+              <span class="project-tag">C#</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">Stored Procedures</span>
+              <span class="project-tag">Newtonsoft.Json</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certifications Section -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">Education &amp; Certifications</h2>
+        <p class="section-desc">Academic degree, professional credentials, and continuous learning path.</p>
+      </div>
+
+      <div class="edu-cert-grid">
+        <!-- Education -->
+        <div class="edu-cert-card">
+          <div class="edu-cert-header">
+            <div class="skill-cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <h3 class="edu-cert-title">Academic Background</h3>
+          </div>
+
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <div class="item-degree">Bachelor of Computer Applications (BCA)</div>
+              <div class="item-institution">St. Agnes College (Autonomous), Mangalore</div>
+              <div class="item-meta">2020 &ndash; 2023 &bull; Graduated with Strong Academic Record</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="item-degree">Full-Stack MERN Specialization</div>
+              <div class="item-institution">DCT Academy, Bengaluru</div>
+              <div class="item-meta">October 2023 &ndash; April 2024 &bull; Intensive Software Engineering</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="edu-cert-card">
+          <div class="edu-cert-header">
+            <div class="skill-cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <h3 class="edu-cert-title">Certifications &amp; AI Tooling</h3>
+          </div>
+
+          <div class="cert-badge-list">
+            <div class="cert-card-sub">
+              <div class="cert-title">Anthropic Education: Claude Code 101</div>
+              <div class="cert-issuer">Anthropic &bull; Advanced AI-assisted developer workflows &bull; 2026</div>
+            </div>
+            <div class="cert-card-sub">
+              <div class="cert-title">Claude with the Anthropic API &amp; Platform 101</div>
+              <div class="cert-issuer">Anthropic &bull; Prompt engineering &amp; LLM application development &bull; 2026</div>
+            </div>
+          </div>
+
+          <div class="learning-box">
+            <div class="learning-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>
+              Currently Expanding Competencies
+            </div>
+            <div class="skill-badges">
+              <span class="skill-pill">Azure OpenAI Service</span>
+              <span class="skill-pill">Azure DevOps Pipelines</span>
+              <span class="skill-pill">Azure App Service</span>
+              <span class="skill-pill">Dapper Micro-ORM</span>
+              <span class="skill-pill">WinForms on .NET 8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recruiter Fast-Action Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-content">
+          <div class="contact-intro">
+            <h2>Let's Connect &amp; Build Together</h2>
+            <p>
+              I am open for full-time <strong>.NET Software Developer</strong> roles in Bengaluru and remote setups. Whether you have an open opportunity or want to discuss enterprise .NET migration, feel free to reach out directly.
+            </p>
+            <div class="cta-group" style="margin-bottom:0;">
+              <a class="btn btn-primary" href="mailto:samikshawagrekar2206@gmail.com">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Send Direct Email
+              </a>
+              <a class="btn btn-secondary" href="Samiksha_Wagrekar_Resume.pdf" download>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Get PDF Resume
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-cards-grid">
+            <!-- Email Tile -->
+            <a href="mailto:samikshawagrekar2206@gmail.com" class="contact-tile">
+              <div class="contact-tile-left">
+                <div class="tile-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <div class="tile-label">Direct Email</div>
+                  <div class="tile-value">samikshawagrekar2206@gmail.com</div>
+                </div>
+              </div>
+              <span class="tile-arrow">&rarr;</span>
+            </a>
+
+            <!-- Phone Tile -->
+            <a href="tel:+918277558987" class="contact-tile">
+              <div class="contact-tile-left">
+                <div class="tile-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <div class="tile-label">Phone &bull; WhatsApp</div>
+                  <div class="tile-value">+91 8277558987</div>
+                </div>
+              </div>
+              <span class="tile-arrow">&rarr;</span>
+            </a>
+
+            <!-- LinkedIn Tile -->
+            <a href="https://www.linkedin.com/in/samiksha-wagrekar-689a72211" target="_blank" rel="noopener noreferrer" class="contact-tile">
+              <div class="contact-tile-left">
+                <div class="tile-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+                </div>
+                <div>
+                  <div class="tile-label">LinkedIn Profile</div>
+                  <div class="tile-value">linkedin.com/in/samiksha-wagrekar</div>
+                </div>
+              </div>
+              <span class="tile-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-flex">
+      <div>
+        <p>&copy; 2026 Samiksha Wagrekar. Built with clean HTML5 &amp; modern CSS.</p>
+        <p style="font-size:0.775rem; color:var(--text-faint); margin-top:0.25rem;">Software Developer (.NET) &bull; Bengaluru, India</p>
+      </div>
+      <a href="#top" class="footer-back-top">
+        <span>Back to top</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Light/Dark Mode & Interaction Script -->
+<script>
+  // Theme Switching Logic with localStorage persistence
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
+  const root = document.documentElement;
+
+  // Check saved theme or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    } else {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    }
+  }
+
+  applyTheme(initialTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = root.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Mobile navigation drawer toggle
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen);
+    });
+    // Close mobile menu on nav item click
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Copy to clipboard helper with toast notice
+  function copyText(text, message) {
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = message || 'Copied to clipboard!';
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
+</script>
+</body>
+</html>
